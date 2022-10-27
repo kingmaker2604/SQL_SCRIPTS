@@ -1,8 +1,10 @@
 # SQL_SCRIPTS
 CREATE:
       USED TO CREATE A NEW EMPTY TABLE
+      
       SYNTAX:
       create table tablename(attr1 datatype1,attr2 datatype 2......);
+      
       EXAMPLE:
       create table student(
       usn varchar2(20) not null primary key,
@@ -12,8 +14,10 @@ CREATE:
 
 INSERT:
       USED TO INSERT NEW TUPLES OR VALUES INTO THE TABLE
+      
       SYNTAX:
       insert into tablename values(value1,value2,......);
+      
       EXAMPLE:
       REFERING TO INSERT THERE ARE TWO KINDS OF METHODS TO ENTER THE VALUES.
 
@@ -29,15 +33,19 @@ INSERT:
 
 DESCRIPTION:
       USED TO KNOW THE DESCRIPTION OF THE TABLE
+      
       SYNTAX:
       desc table tablename;
+      
       EXAMPLE:
       desc table student;
 
 SELECT:
       USED TO RETRIEVE THE REQUIRED COLUMN VALUES FROM THE TABLE
+      
       SYNTAX:
       select column names from tablename;
+      
       EXAMPLE:
       HERE TOO WE HAVE TWO KINDS
 
@@ -51,8 +59,10 @@ SELECT:
 
 DELETE:
       USED TO DELETE AN EXISTING TUPLE FROM THE TABLE
+      
       SYNTAX:
       delete from tablename where condition;
+      
       EXAMPLE:
       delete from student 
       where usn='1MS20IS090';
@@ -61,8 +71,10 @@ DELETE:
       
 DROP:
       USED TO DROP AN ENTIRE TABLE FROM THE DATABASE
+      
       SYNTAX:
       drop table tablename;
+      
       EXAMPLE:
       drop table student;
       
@@ -73,6 +85,7 @@ ALTER:
       
       SYNTAX:
       alter table tablename add/modify column_name datatype;
+      
       EXAMPLE:
       1. alter table student
          add dept_id varchar2(20);
@@ -81,10 +94,12 @@ ALTER:
 
 UPDATE:
       USED TO UPDATE THE ROWS OR THE TUPLES
+      
       SYNTAX:
       update tablename
       set col1=val1,col2=val2......
       where condition
+      
       EXAMPLE:
       update student
       set name='KRISHNA;

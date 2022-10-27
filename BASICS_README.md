@@ -80,6 +80,15 @@ ALTER:
          modify usn number(10);
 
 UPDATE:
+      USED TO UPDATE THE ROWS OR THE TUPLES
+      SYNTAX:
+      update tablename
+      set col1=val1,col2=val2......
+      where condition
+      EXAMPLE:
+      update student
+      set name='KRISHNA;
+      where usn='1MS20IS090';
 
       
       

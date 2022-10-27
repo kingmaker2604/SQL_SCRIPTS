@@ -1,36 +1,45 @@
 # SQL_SCRIPTS
-CREATE:
+
+## CREATE:
       USED TO CREATE A NEW EMPTY TABLE
       
-      SYNTAX:
-      create table tablename(attr1 datatype1,attr2 datatype 2......);
+### SYNTAX:
       
-      EXAMPLE:
+```sql
+create table tablename(attr1 datatype1,attr2 datatype 2......);
+```
+      
+ ### EXAMPLE:
+ ```sql
       create table student(
       usn varchar2(20) not null primary key,
       name char(20),
       age number(10),
       gender char(3));
+ ```
 
 INSERT:
       USED TO INSERT NEW TUPLES OR VALUES INTO THE TABLE
       
-      SYNTAX:
-      insert into tablename values(value1,value2,......);
-      
-      EXAMPLE:
+ SYNTAX:
+ ```sql
+ insert into tablename values(value1,value2,......);
+ ```
+  EXAMPLE:
       REFERING TO INSERT THERE ARE TWO KINDS OF METHODS TO ENTER THE VALUES.
 
-      TYPE1:
+   TYPE1:
+      ```sql
       insert into student values('1MS20IS090','KRISHNA',19,'M');
-
-      TYPE2:
+      ```
+   TYPE2:
+      ```sql
       insert into student values('&usn','&name',&age,&gender);
       enter the value for usn:1MS20IS090
       enter the value for name:KRISHNA
       enter the vakue for age:19
       enter the value for gender:M
-
+      ```
 DESCRIPTION:
       USED TO KNOW THE DESCRIPTION OF THE TABLE
       

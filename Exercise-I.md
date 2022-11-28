@@ -155,6 +155,7 @@ BEGIN
 END;
 /
 ```
+
 Before
 <P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1F0.png?raw=True"></P>
 Output

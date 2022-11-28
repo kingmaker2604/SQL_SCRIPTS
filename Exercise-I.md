@@ -95,8 +95,7 @@ GROUP BY DEPT_NO;
 ```
 <P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1D2.png?raw=True"></P>
 
-### 3) Update the Project details of Employee bearing SSN = #SSN to ProjectNo =<br>
-### &emsp;#Project_No and display the same.<br>
+### 3) Update the Project details of Employee bearing SSN = #SSN to ProjectNo =#Project_No and display the same.<br>
 ```SQL
 UPDATE ASSIGN
 SET PROJ_NO='P5'
@@ -115,8 +114,7 @@ HAVING COUNT(PROJ_NO)<=1;
 <P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1D4.png?raw=True"></P>
 
 
-## e) Create the table, insert suitable tuples and perform the following operations using<br>
-## &ensp;MongoDB
+## e) Create the table, insert suitable tuples and perform the following operations using MongoDB
 ```javascript
 db.create()
 ```

@@ -79,10 +79,10 @@ VALUES('&SSN','&PROJ_AREA');
 SELECT * 
 FROM EMPLOYEE
 WHERE SSN IN (SELECT SSN
-                            FROM ASSIGN
-                            WHERE PROJ_NO IN(SELECT PROJ_NO
-                                                                FROM PROJECT
-                                                                WHERE PROJ_AREA='DATABASE'));
+              FROM ASSIGN
+              WHERE PROJ_NO IN(SELECT PROJ_NO
+                               FROM PROJECT
+                               WHERE PROJ_AREA='DATABASE'));
 ```
 ![IMAGE SHOULD COME HERE BRO](https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1D1.png?raw=True#center)
 

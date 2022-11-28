@@ -33,7 +33,7 @@ NAME CHAR(10),
 DEPT_NO VARCHAR2(10));
 ```
 <p align="center">
-![IMAGE SHOULD COME HERE BRO](https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/DESCEMPLOYEE.png)
+![IMAGE SHOULD COME HERE BRO](https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/DESCEMPLOYEE.png?raw=True)
 </p>
 
 ```SQL

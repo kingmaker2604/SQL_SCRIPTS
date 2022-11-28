@@ -1,9 +1,3 @@
-<style>
-    img[src*='#center'] { 
-    display: block;
-    margin: auto;
-}
-</style>
 # *Exercise-I*
 
 ## Question
@@ -74,7 +68,7 @@ VALUES('&SSN','&PROJ_AREA');
 ![IMAGE SHOULD COME HERE BRO](https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/SELECTALLFROMPROJECT.png?raw=True)
 ![IMAGE SHOULD COME HERE BRO](https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/SELECTALLFROMASSIGN.png?raw=True)
 
-### 1)
+### 1)Obtain the details of employees assigned to “Database” project.
 ```SQL
 SELECT * 
 FROM EMPLOYEE
@@ -86,3 +80,4 @@ WHERE SSN IN (SELECT SSN
 ```
 ![IMAGE SHOULD COME HERE BRO](https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1D1.png?raw=True#center)
 
+### 2)Find the number of employees working in each department with department details

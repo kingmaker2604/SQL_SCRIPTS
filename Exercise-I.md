@@ -115,6 +115,19 @@ HAVING COUNT(PROJ_NO)<=1;
 
 
 ## e) Create the table, insert suitable tuples and perform the following operations using MongoDB
+Creating table in mongo
 ```javascript
-db.create()
+db.createCollection("Employee")
 ```
+Inserting tuples in mongo
+```javascript
+db.Employee.insertOne({"SSN":1234,"Name":"Sita","Dept_no":2,"DeptName":'ISE',"Proj_no":"1"})
+```
+```javascript
+ db.Employee.insertOne({"SSN":1235,"Name":"John","Dept_no":1,"DeptName":'MECH',"Proj_no": 2})
+```
+To view contents
+```javascript
+db.Employee.find().pretty()
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1EO.png?raw=True"></P>

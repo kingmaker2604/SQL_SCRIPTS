@@ -103,3 +103,20 @@ SET PROJ_NO='P5'
 WHERE SSN = 'S001';
 ```
 <P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1D3.png?raw=True"></P>
+
+### 4) Retrieve the employee who has not been assigned more than two projects.
+```SQL
+SELECT SSN,COUNT(PROJ_NO)
+FROM ASSIGN
+GROUP BY SSN
+HAVING COUNT(PROJ_NO)<=1;
+```
+*FOR THIS EXAMPLE I TOOK LESS THAN ONE SO WE GET TO KNOW THE DIFFRENCE*
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1D4.png?raw=True"></P>
+
+
+## e) Create the table, insert suitable tuples and perform the following operations using<br>
+## &ensp;MongoDB
+```javascript
+db.create()
+```

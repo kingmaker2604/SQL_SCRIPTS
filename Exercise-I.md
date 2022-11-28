@@ -1,0 +1,67 @@
+# *Exercise-I*
+
+## Question
+Consider an Employee with a social security number (SSN) working on multiple projects with<br>
+definite hours for each. Each Employee belongs to a Department. Each project is associated with<br>
+some domain areas such as Database, Cloud and so on. Each Employee will be assigned to some<br>
+project. Assume the attributes for Employee and Project relations.<br>
+ &ensp;a) Mention the constraints neatly.<br>
+ &ensp;b) Design the ER diagram for the problem statement<br>
+ &ensp;c) State the schema diagram for the ER diagram.<br>
+ &ensp;d) Create the tables, insert suitable tuples (min 6 each) and perform the following operations<br>
+ &ensp;in SQL<br>
+ &emsp;1. Obtain the details of employees assigned to “Database” project.<br>
+ &emsp;2. Find the number of employees working in each department with department<br>
+ &emsp;details.<br>
+ &emsp;3. Update the Project details of Employee bearing SSN = #SSN to ProjectNo =<br>
+ &emsp;#Project_No and display the same.<br>
+ &emsp;4. Retrieve the employee who has not been assigned more than two projects.<br>
+ &ensp;e) Create the table, insert suitable tuples and perform the following operations using<br>
+ &ensp;MongoDB<br>
+ &emsp;1. List all the employees of Department named #Dept_name.<br>
+ &emsp;2. Name the employees working on Project Number :#Project_No<br>
+ &ensp;f) Write a program that gives all employees in Department #number a 15% pay increase.<br>
+ &ensp;Display a message displaying how many employees were awarded the increase.<br>
+
+
+ ## d)
+ ### Creating table employee,project,assign 
+```SQL
+CREATE TABLE EMPLOYEE(
+SSN VARCHAR2(10) NOT NULL PRIMARY KEY,
+NAME CHAR(10),
+DEPT_NO VARCHAR2(10));
+```
+<P ALIGN="CENTER"><IMG SRC="IMGS/DESC EMPLOYEE.PNG"></P><BR>
+
+```SQL
+CREATE TABLE PROJECT(
+PROJ_NO VARCHAR2(10) NOT NULL PRIMARY KEY,
+PROJ_AREA VARCHAR2(10));
+```
+<P ALIGN="CENTER"><IMG SRC="IMGS/DESC PROJECT.PNG"></P><BR>
+
+```SQL
+CREATE TABLE ASSIGN(
+SSN VARCHAR2(10) REFERENCES EMPLOYEE(SSN),
+PROJ_NO VARCHAR2(10) REFERENCES PROJECT(PROJ_NO));
+```
+<P ALIGN="CENTER"><IMG SRC="IMGS/DESC ASSIGN.PNG"></P><BR>
+
+### Inserting values into the tables
+```SQL
+INSERT INTO EMPLOYEE
+VALUES('&SSN','&NAME','&DEPT_NO');
+```
+```SQL
+INSERT INTO PROJECT
+VALUES('&PROJ_NO','&PROJ_AREA');
+```
+```SQL
+INSERT INTO ASSIGN
+VALUES('&SSN','&PROJ_AREA');
+```
+<FIGCAPTION>EMLOYEE</FIGCAPTION>
+<IMG SRC="IMGS/SELECTALLFROMEMPLOYEE.PNG">
+<FIGCAPTION>PROJECT</FIGCAPTION>
+<IMG SRC="IMGS/SELECTALLFROMPROJECT.PNG">

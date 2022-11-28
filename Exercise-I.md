@@ -131,3 +131,33 @@ To view contents
 db.Employee.find().pretty()
 ```
 <P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1EO.png?raw=True"></P>
+
+### 1) List all the employees of Department named #Dept_name.
+```javascript
+db.Employee.find({"DeptName":"MECH"}).pretty()
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1E1.png?raw=True"></P>
+
+### 2) Name the employees working on Project Number :#Project_No
+```javascript
+ db.Employee.find({"Proj_no":2 }).pretty()
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1E2.png?raw=True"></P>
+
+### f) Write a program that gives all employees in Department #number a 15% pay increase Display a message displaying how many employees were awarded the increase.<br>
+
+```SQL
+BEGIN
+    UPDATE EMPLOYEE
+    SET SALARY=(1.15*SALARY)    
+    WHERE DEPT_NO=3;
+    DBMS_OUTPUT.PUT_LINE(SQL%ROWCOUNT||'ROWS UPDATED');
+END;
+/
+```
+Before
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1EF0.png?raw=True"></P>
+Output
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1F1.png?raw=True"></P>
+After
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1F2.png?raw=True"></P>

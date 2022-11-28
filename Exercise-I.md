@@ -32,14 +32,15 @@ SSN VARCHAR2(10) NOT NULL PRIMARY KEY,
 NAME CHAR(10),
 DEPT_NO VARCHAR2(10));
 ```
-![IMAGE SHOULD COME HERE BRO](https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/DESCEMPLOYEE.png?raw=True#center)
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/DESCEMPLOYEE.png?raw=True"></P>
 
 ```SQL
 CREATE TABLE PROJECT(
 PROJ_NO VARCHAR2(10) NOT NULL PRIMARY KEY,
 PROJ_AREA VARCHAR2(10));
 ```
-![IMAGE SHOULD COME HERE BRO](https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/DESCPROJECT.png?raw=True#center)
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/DESCPROJECT.png?raw=True"></P>
+
 <BR>
 
 ```SQL
@@ -47,7 +48,7 @@ CREATE TABLE ASSIGN(
 SSN VARCHAR2(10) REFERENCES EMPLOYEE(SSN),
 PROJ_NO VARCHAR2(10) REFERENCES PROJECT(PROJ_NO));
 ```
-![IMAGE SHOULD COME HERE BRO](https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/DESCASSIGN.png?raw=True#center)
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/DESCASSIGN.png?raw=True"></P>
 <BR>
 
 ### Inserting values into the tables
@@ -64,9 +65,15 @@ INSERT INTO ASSIGN
 VALUES('&SSN','&PROJ_AREA');
 ```
 
-![IMAGE SHOULD COME HERE BRO](https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/SELECTALLFROMEMPLOYEE.png?raw=True)
-![IMAGE SHOULD COME HERE BRO](https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/SELECTALLFROMPROJECT.png?raw=True)
-![IMAGE SHOULD COME HERE BRO](https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/SELECTALLFROMASSIGN.png?raw=True)
+<FIGURE>
+<FIGCAPTION>EMPLOYEE</FIGCAPTION>
+<IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/SELECTALLFROMEMPLOYEE.png?raw=True">
+<FIGCAPTION>PROJECT</FIGCAPTION>
+<IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/SELECTALLFROMPROJECT.png?raw=True">
+<FIGCAPTION>ASSIGN</FIGCAPTION>
+<IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/SELECTALLFROMASSIGN.png?raw=True">
+</FIGURE>
+
 
 ### 1)Obtain the details of employees assigned to “Database” project.
 ```SQL
@@ -78,6 +85,21 @@ WHERE SSN IN (SELECT SSN
                                FROM PROJECT
                                WHERE PROJ_AREA='DATABASE'));
 ```
-![IMAGE SHOULD COME HERE BRO](https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1D1.png?raw=True#center)
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1D1.png?raw=True"></P>
 
-### 2)Find the number of employees working in each department with department details
+### 2)Find the number of employees working in each department with department <BR>details
+```SQL
+SELECT DEPT_NO,COUNT(SSN)
+FROM EMPLOYEE
+GROUP BY DEPT_NO;
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1D2.png?raw=True"></P>
+
+### 3) Update the Project details of Employee bearing SSN = #SSN to ProjectNo =<br>
+### &emsp;#Project_No and display the same.<br>
+```SQL
+UPDATE ASSIGN
+SET PROJ_NO='P5'
+WHERE SSN = 'S001';
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1D3.png?raw=True"></P>

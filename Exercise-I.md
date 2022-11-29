@@ -24,7 +24,7 @@ project. Assume the attributes for Employee and Project relations.<br>
  &ensp;Display a message displaying how many employees were awarded the increase.<br>
 
 
- ## d)
+ ## d)Create the tables, insert suitable tuples (min 6 each) and perform the following operations in SQL
  ### Creating table employee,project,assign 
 ```SQL
 CREATE TABLE EMPLOYEE(

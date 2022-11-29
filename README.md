@@ -1,3 +1,7 @@
+# Click on below links for complete solution of each excercise
+->[Excercise-I](https://github.com/MXNXV-ERR/dbmslab/blob/main/Exercise-I.md)
+
+
 # SQL_SCRIPTS
 
 ## CREATE:

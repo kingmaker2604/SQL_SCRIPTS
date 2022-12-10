@@ -31,7 +31,7 @@ BOAT_NAME CHAR(20),
 BOT_COLOR CHAR(10),
 PRIMARY KEY(BOAT_ID));
 ```
-<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q21.png?raw=True"></P>
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q31.png?raw=True"></P>
 
 ```SQL
 CREATE TABLE SAILOR(
@@ -41,7 +41,7 @@ AGE NUMBER(3),
 RATING VARCHAR(9),
 PRIMARY KEY(SAILOR_ID));
 ```
-<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q22.png?raw=True"></P>
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q32.png?raw=True"></P>
 
 ```SQL
 CREATE TABLE RESERVES(
@@ -50,7 +50,7 @@ SAILOR_ID VARCHAR2(20) REFERENCES SAILOR(SAILOR_ID),
 DAY CHAR(10),
 PRIMARY KEY(BOAT_ID,SAILOR_ID));
 ```
-<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q23.png?raw=True"></P>
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q33.png?raw=True"></P>
 
 ### Inserting values into the tables
 ```SQL
@@ -67,11 +67,11 @@ VALUES('&BOAT_ID','&SAILOR_ID','&DAY');
 ```
 <FIGURE>
 <FIGCAPTION>BOAT</FIGCAPTION>
-<IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q24.png?raw=True">
+<IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q34.png?raw=True">
 <FIGCAPTION>SAILOR</FIGCAPTION>
-<IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q25.png?raw=True">
+<IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q35.png?raw=True">
 <FIGCAPTION>RESERVES</FIGCAPTION>
-<IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q26.png?raw=True">
+<IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q36.png?raw=True">
 </FIGURE>
 
 
@@ -85,9 +85,30 @@ WHERE BOAT_ID IN(SELECT BOAT_ID
                                      FROM SAILOR
                                      WHERE SAILORNAME='MANAV'));
 ```
-<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q1D1.png?raw=True"></P>
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q3D1.png?raw=True"></P>
 
 ### 2) Retrieve the BID of the boats reserved necessarily by all the sailors
 ```SQL
+SELECT BOAT_NAME,BOAT_ID
+FROM BOAT B
+WHERE NOT EXISTS (SELECT *
+                  FROM SAILOR S
+                  WHERE NOT EXISTS (SELECT * 
+                                    FROM RESERVES R
+                                    WHERE R.SAILOR_ID=S.SAILOR_ID AND R.BOAT_ID=B.BOAT_ID)) ;
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q3D2.png?raw=True"></P>
 
+
+### 3)Find the number of boats reserved by each sailor. Display the Sailor_Name along with the number of boats reserved.
+```SQL
+SELECT SAILORNAME,COUNT(R.BOAT_ID)
+FROM RESERVES R ,SAILOR S
+WHERE R.SAILOR_ID=S.SAILOR_ID
+GROUP BY SAILORNAME;
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q3D3.png?raw=True"></P>
+
+### 4)Identify which boats have the same name as their sailor.
+```SQL
 ```

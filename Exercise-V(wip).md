@@ -43,7 +43,8 @@ CREATE TABLE STUDENTS(
 USN VARCHAR2(10) NOT NULL PRIMARY KEY,
 NAME CHAR(20),
 SEMESTER INT,
-DEPARTMENT VARCHAR2(10));
+DEPARTMENT VARCHAR2(10),
+GENDER CHAR(1));
 ```
 <P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q52.png?raw=True"></P>
 
@@ -80,3 +81,17 @@ VALUES('&ISBN','&USN','&DATEBORROWED');
 <FIGCAPTION>BORROWS</FIGCAPTION>
 <IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q56.png?raw=True">
 </FIGURE>
+
+### 1)Obtain the names of the student who has borrowed either book bearing ISBN ‘123’ or ISBN ‘124’
+Changed query according according to my input
+```sql
+SELECT NAME FROM STUDENTS
+WHERE USN IN(SELECT USN FROM BORROWS
+             WHERE ISBN='ISB123' OR ISBN='ISB554');
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q5D1.png?raw=True"></P>
+
+### 2)Obtain the Names of female students who have borrowed “Database” books.
+
+
+### 3)Find the number of books borrowed by each student. Display the student details along with the number of books.

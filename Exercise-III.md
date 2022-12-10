@@ -146,3 +146,30 @@ db.BOATRES.find({"SNAME":'Sucre'}).count()
 db.BOATRES.find({"COLOUR":'Black'}).pretty()
 ```
 <P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q3E2.png?raw=True"></P>
+
+
+
+```SQL
+DECLARE
+    N NUMBER :=&N;
+    J NUMBER :=2;
+    FLAG NUMBER :=0;
+BEGIN
+    WHILE J<=N/2 LOOP
+        IF MOD(N,J)=0 THEN
+            DBMS_OUTPUT.PUT_LINE(N||' IS NOT A PRIME NUMBER');
+            FLAG:=1;
+            EXIT;
+        ELSE
+            J:=J+1;
+        END IF;
+    END LOOP;
+    IF FLAG=0 THEN
+        DBMS_OUTPUT.PUT_LINE(N||' IS A PRIME NUMBER');
+    END IF;
+END;
+/
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q3F1.png?raw=True"></P>
+
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q3F2.png?raw=True"></P>

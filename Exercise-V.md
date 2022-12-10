@@ -1,0 +1,82 @@
+# *Exercise-V*
+
+## Question
+
+Consider the Book Lending system from the library- BOOKS, STUDENT, BORROWS. The
+students are allowed to borrow any number of books on a given date from the library. The details of
+the book should include ISBN, Title of the Book, author and publisher. All students need not
+compulsorily borrow books.
+&ensp;a) Mention the constraints neatly.<br>
+&ensp;b) Design the ER diagram for the problem statement<br>
+&ensp;c) State the schema diagram for the ER diagram.<br>
+&ensp;d) Create the above tables, insert suitable tuples and perform the following operations in<br>
+&ensp;SQL:<br>
+&ensp;1. Obtain the names of the student who has borrowed either book bearing ISBN ‘123’<br>
+&ensp;or ISBN ‘124’.<br>
+&ensp;2. Obtain the Names of female students who have borrowed “Database” books.<br>
+&ensp;3. Find the number of books borrowed by each student. Display the student details<br>
+&ensp;along with the number of books.<br>
+&ensp;4. List the books that begin with the letters “DA” and has never been borrowed by any<br>
+&ensp;students.<br>
+&ensp;e) Create the table, insert suitable tuples and perform the following operations using<br>
+&ensp;MongoDB<br>
+&ensp;1. Obtain the book details authored by “author_name”.<br>
+&ensp;2. Obtain the Names of students who have borrowed “Database” books.<br>
+&ensp;f) Write a PL/SQL procedure to print the first 8 Fibonacci numbers and a program to call<br>
+&ensp;the same.<br>
+
+
+## d) Create the above tables, insert suitable tuples and perform the following operations in SQL:
+### Creating entities books,student,borrows
+```SQL
+CREATE TABLE BOOKS(
+ISBN VARCHAR2(20),
+TITLE VARCHAR2(20),
+AUTHOR CHAR(20),
+PUBLISHER VARCHAR2(20),
+PRIMARY KEY(ISBN));
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q51.png?raw=True"></P>
+
+```SQL
+CREATE TABLE STUDENTS(
+USN VARCHAR2(10) NOT NULL PRIMARY KEY,
+NAME CHAR(20),
+SEMESTER INT,
+DEPARTMENT VARCHAR2(10));
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q52.png?raw=True"></P>
+
+```SQL
+CREATE TABLE BORROWS( 
+ISBN VARCHAR2(20), 
+USN VARCHAR2(10), 
+DATEBORROWED DATE, 
+FOREIGN KEY(USN) REFERENCES STUDENTS(USN), 
+FOREIGN KEY(ISBN) REFERENCES BOOKS(ISBN), 
+PRIMARY KEY(ISBN,USN));
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q53.png?raw=True"></P>
+
+### Inserting values into the tables
+
+```SQL
+INSERT INTO BOOKS 
+VALUES('&ISBN','&TITLE','&AURTHOR','&PUBLISHER');
+```
+```SQL
+INSERT INTO STUDENTS
+VALUES('&USN','&NAME','&SEMESTER','&DEPARTMENT');
+```
+```SQL
+INSERT INTO BORROWS
+VALUES('&ISBN','&USN','&DATEBORROWED');
+```
+<FIGURE>
+<FIGCAPTION>BOOKS</FIGCAPTION>
+<IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q54.png?raw=True">
+<FIGCAPTION>STUDENTS</FIGCAPTION>
+<IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q55.png?raw=True">
+<FIGCAPTION>BORROWS</FIGCAPTION>
+<IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q56.png?raw=True">
+</FIGURE>

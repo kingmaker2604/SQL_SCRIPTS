@@ -147,7 +147,7 @@ db.BOATRES.find({"COLOUR":'Black'}).pretty()
 ```
 <P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q3E2.png?raw=True"></P>
 
-
+### f) Write a PL/SQL program to check whether a given number is prime or not.
 
 ```SQL
 DECLARE

@@ -111,4 +111,38 @@ GROUP BY SAILORNAME;
 
 ### 4)Identify which boats have the same name as their sailor.
 ```SQL
+SELECT BOAT_NAME,SAILORNAME
+FROM BOAT B JOIN SAILOR S
+ON B.BOAT_NAME=S.SAILORNAME;
 ```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q3D4.png?raw=True"></P>
+
+## e)Create the table, insert suitable tuples and perform the following operations using MongoDB.
+Creating table in mongo
+```javascript
+db.createCollection("BOATRES")
+```
+Inserting tuples in mongo
+```javascript
+db.BOATRES.insert({"BID":9988,"BNAME":'ABC',"COLOUR":'Black',"SNAME":'John',"SID":1234,"DAY":'2017-12-25'})
+db.BOATRES.insert({"BID":8877,"BNAME":'DEF',"COLOUR":'Black',"SNAME":'Smith',"SID":4567,"DAY":'2017-11-24'})
+db.BOATRES.insert({"BID":7766,"BNAME":'GHI',"COLOUR":'Blue',"SNAME":'Sucre',"SID":1122,"DAY":'2017-10-24'})
+db.BOATRES.insert({"BID":6655,"BNAME":'PQR',"COLOUR":'white',"SNAME":'Sucre',"SID":1122,"DAY":'2017-10-29'})
+```
+To view contents
+```javascript
+db.Employee.find().pretty()
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q3E0.png?raw=True"></P>
+
+### 1)Obtain the number of boats obtained by sailor :#Sailor_Name
+```javascript
+db.BOATRES.find({"SNAME":'Sucre'}).count()
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q3E1.png?raw=True"></P>
+
+### 2)Retrieve boats of color :”#color”
+```javascript
+db.BOATRES.find({"COLOUR":'Black'}).pretty()
+```
+<P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q3E2.png?raw=True"></P>

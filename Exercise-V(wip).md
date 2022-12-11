@@ -67,7 +67,7 @@ VALUES('&ISBN','&TITLE','&AURTHOR','&PUBLISHER');
 ```
 ```SQL
 INSERT INTO STUDENTS
-VALUES('&USN','&NAME','&SEMESTER','&DEPARTMENT');
+VALUES('&USN','&NAME','&SEMESTER','&DEPARTMENT','&GENDER');
 ```
 ```SQL
 INSERT INTO BORROWS
@@ -92,6 +92,14 @@ WHERE USN IN(SELECT USN FROM BORROWS
 <P ALIGN="CENTER"><IMG SRC="https://github.com/MXNXV-ERR/SQL_SCRIPTS/blob/main/IMGS/Q5D1.png?raw=True"></P>
 
 ### 2)Obtain the Names of female students who have borrowed “Database” books.
-
+```SQL
+SELECT NAME
+FROM STUDENTS
+WHERE USN IN(SELECT USN 
+             FROM  BORROWS
+             WHERE ISBN IN(SELECT ISBN 
+                           FROM BOOKS
+                           WHERE TITLE='DATABASE')) AND GENDER='F';
+```
 
 ### 3)Find the number of books borrowed by each student. Display the student details along with the number of books.

@@ -103,3 +103,9 @@ WHERE USN IN(SELECT USN
 ```
 
 ### 3)Find the number of books borrowed by each student. Display the student details along with the number of books.
+---sql
+      select sname,count(isbn)
+      from borrows b, student s
+      where (b.usn=b.usn)
+      group by sname;
+      
